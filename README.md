@@ -235,3 +235,6 @@ We don't expect a perfect implementation. Those who show genuine effort and lear
 4. **Send us the link** in the Google Form you'll be asked to fill out.
 
 Your repo should include your code, your trained model weights (or a script that reproduces them), your inference script, an up-to-date `requirements.txt`, your completed `METHODOLOGY.md`, your `AI_LOG.md`, and your **full commit history** (push all of it; do not squash). Don't commit your Roboflow API key or the downloaded dataset folder. `.env` is already git-ignored.
+
+
+Final video link (demo video): https://youtu.be/X2h3CZRG5eU
