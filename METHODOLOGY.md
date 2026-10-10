@@ -1,6 +1,7 @@
 # Methodology
 
 1. How to run it
+
 First, we can set up the environment 
 python -m venv .venv
 source .venv/bin/activate
@@ -44,7 +45,7 @@ Based on this, the metrics saw a significant deterioration across numerous facto
 The metric analysis for both of these versions displays that the custom augmentation with 40 epochs does not improve the outcome of the training for the model, and instead it deteriorates the models predictions. This could be due to the increase in the variation in aspects like translation, saturation and brightness jitters, rotation, and random erasing. I feel that although these factors prevent overfitting, it is possible that the 40 epochs that the model is trained on - is in fact not enough for the model to actually internalize the classification features for mallets and bottles. Therefore, the base version should be submitted from my perspective.  
 
 
-Error Log
+3. Error Log
 
 In the image bottle_double_recall.jpg there is a zoomed in large image of a mallet, however the system wrongly predicts it to be a bottle. The mallet is presumed to be two bottles. The box as well is extremely large and inaccurate along with the overall prediction class. I feel this happened because the handle part of the mallet on a larger scale looks like the main body of the bottle. 
 The image double_bottle_overlap.jpg displays one bottle being covered by two boxes, overlapping one another. Here although the prediction is correct, the mAP50-95 score is compromised as it presumes there are two bottles together, when in reality there is only one. Neither boxes completely cover the bottle. It could have also happened due to the dark lighting in the background, and rocky background producing many harsh shadows.
@@ -52,7 +53,7 @@ The image bottle_false_pred.jpg showcases the model correctly locating the malle
 In the image titled mallet_overlap.jpg the model accurately predicts that the object is a mallet however there are an underminable number of boxes created as it predicts at least 5-6 mallets to be in that one overlapping spot. This could have occurred due to the mallet being partially covered by grass, and simultaneously blending with the background causing the model to confuse the location and size of the actual mallet. 
 
 
-Phone video Test 
+4. Phone video Test 
 
 I filmed a bottle on a chair, and moved around in different directions to display different orientations of the bottle. The lighting was natural and had some natural shadows falling onto the object. I did this in a 18-19 seconds video on my phone.
 In these frames I realized that the model is unable to properly detect objects. Most of the images the model did not detect anything, and there was no observation of a bottle or even a mallet. The model was able to recognize that it is a bottle in some photos, but with medium to high confidence (not too high of a confidence level). The boxes are often too big, and overcompensate for the bottle as well.
